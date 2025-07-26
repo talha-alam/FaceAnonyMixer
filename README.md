@@ -4,7 +4,7 @@
 [![Code](https://img.shields.io/badge/Code-Coming%20Soon-yellow)](https://github.com/your-repo/faceanonymixer)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**Accepted at IEEE International Joint Conference on Biometrics (IJCB) 2025**
+**Accepted at IEEE International Joint Conference on Biometrics (IJCB) 2025 – *Flagship Biometrics Conference***
 
 ## Authors
 
