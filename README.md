@@ -15,8 +15,13 @@
 ³ Michigan State University, USA
 
 ## Abstract
-
-Advancements in face recognition technologies have increased privacy concerns. Although many face anonymization techniques have been proposed, they do not satisfy all the biometric template protection requirements such as identity preservation, revocability, unlinkability, and irreversibility. In this work, we leverage the power of synthetic face image generators to design a novel cancelable face generation framework called **FaceAnonyMixer** that works in the image domain. The core idea of FaceAnonyMixer is to irreversibly mix the latent code of the real face image with a synthetic latent code indexed by a revocable key. The mixed latent code is further refined by minimizing a combination of losses designed to achieve all the requirements of cancelable biometrics. FaceAnonyMixer is capable of generating high-quality cancelable faces that can be directly matched using existing face recognition systems without any modification. Experimental results demonstrate that our approach achieves competitive recognition accuracy while significantly improving privacy protection.
+ Advancements in face recognition (FR) technologies have amplified privacy concerns, necessitating methods that protect identity while maintaining recognition utility. 
+ Existing face anonymization approaches fail to meet all biometric template protection requirements, such as revocability, unlinkability, and irreversibility.
+ In this work, we propose FaceAnonyMixer, a cancelable face generation framework that leverages the latent space of a pre-trained generative model to synthesize privacy-preserving face images.
+ The core idea of FaceAnonyMixer is to irreversibly mix the latent code of a real face image with a synthetic code derived from a revocable key. 
+ The mixed latent code is further refined through a carefully designed multi-objective loss to satisfy all cancelable biometric requirements.
+ FaceAnonyMixer is capable of generating high-quality cancelable faces that can be directly matched using existing FR systems without requiring any modifications.
+ Extensive experiments on benchmark datasets demonstrate that FaceAnonyMixer delivers superior recognition accuracy while providing significantly stronger privacy protection, achieving over an 11% absolute gain on commercial API compared to recent cancelable biometric methods.
 
 ## Key Features
 
