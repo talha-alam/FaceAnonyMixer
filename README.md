@@ -25,33 +25,6 @@ FaceAnonyMixer generates privacy-preserving face images by **mixing a real face'
 | **Irreversibility** | Original identity cannot be recovered even if the key and template are both known |
 | **Performance Preservation** | Recognition accuracy on protected faces matches unprotected baselines |
 
-**Inspired by [FALCO](https://github.com/chi0tzp/FALCO).**
-
----
-
-## How It Works
-
-StyleGAN2's 18 W+ layers decompose as: coarse structure (0–2), identity (3–7), fine details (8–17).
-
-1. **Invert** the real face into W+: `z_r = E(x_r)`
-2. **Sample** a synthetic latent from the key: `z_f = S(k)`
-3. **Naïve mix** — replace identity layers with those from the fake code:
-   ```
-   z_p = [ z_r^(0:2),  z_f^(3:7),  z_r^(8:17) ]
-   ```
-4. **Optimise** for 50 Adam steps under:
-   ```
-   L_total = λ1·L_anon + λ2·L_idp + λ3·L_attr
-   ```
-
-| Loss | Role |
-|---|---|
-| `L_anon` | Pushes protected face away from original in ArcFace space |
-| `L_idp` | Pulls protected faces of the *same person* together (identity preservation) |
-| `L_attr` | Aligns FaRL features to retain pose, expression, and other non-identity attributes |
-
----
-
 ## Repository Structure
 
 ```
@@ -251,44 +224,14 @@ python visualize.py \
     --batch-size 4 --save --verbose
 ```
 
----
-
-## Results
-
-### Protection Success Rate (%) — Anonymization
-
-| Method | FMR | CelebA-HQ avg | VGGFace2 avg | Overall |
-|---|---|---|---|---|
-| CanFG | 0.1% | 64.59 | 11.78 | 38.18 |
-| **Ours** | **0.1%** | **80.12** | **97.34** | **88.73** |
-| CanFG | 0.001% | 41.40 | 5.05 | 23.22 |
-| **Ours** | **0.001%** | **60.94** | **86.41** | **73.67** |
-
-### Recognition Performance (CelebA-HQ)
-
-| Method | EER ↓ | AUC ↑ | FID ↓ |
-|---|---|---|---|
-| Original | 0.027 | 0.990 | — |
-| CanFG | 0.045 | 0.988 | 82.52 |
-| **Ours** | **0.019** | **0.997** | **37.73** |
-
-### Commercial API — Face++ (lower confidence = better protected)
-
-| Method | CelebA-HQ | VGGFace2 | Average |
-|---|---|---|---|
-| CanFG | 71.37 | 70.78 | 71.07 |
-| **Ours** | **53.73** | **31.51** | **58.37** |
-
----
-
 ## Citation
 
 ```bibtex
-@inproceedings{alam2025faceanonymixer,
-    title     = {FaceAnonyMixer: Cancelable Faces via Identity Consistent Latent Space Mixing},
-    author    = {Alam, Mohammed Talha and Shamshad, Fahad and Karray, Fakhri and Nandakumar, Karthik},
-    booktitle = {IEEE International Joint Conference on Biometrics (IJCB)},
-    year      = {2025}
+@article{alam2025faceanonymixer,
+  title={FaceAnonyMixer: Cancelable Faces via Identity Consistent Latent Space Mixing},
+  author={Alam, Mohammed Talha and Shamshad, Fahad and Karray, Fakhri and Nandakumar, Karthik},
+  journal={arXiv preprint arXiv:2508.05636},
+  year={2025}
 }
 ```
 
