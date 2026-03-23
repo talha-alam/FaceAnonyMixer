@@ -1,0 +1,19 @@
+torch>=1.12.0
+torchvision>=0.13.0
+numpy
+Pillow
+opencv-python-headless
+scikit-learn
+scikit-image
+scipy
+tqdm
+matplotlib
+lpips
+ipython
+ipykernel
+ipywidgets
+urllib3
+requests
+ninja
+clip @ git+https://github.com/openai/CLIP.git
+face-alignment

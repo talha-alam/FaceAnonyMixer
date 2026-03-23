@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project runtime outputs (do not commit datasets or experiment results)
+datasets/
+experiments/
+viz/
+
+# Pretrained model weights (downloaded separately)
+models/pretrained/
+
+# Temporary / fine-tuned generator snapshots
+*.pth
+test_fine_tuned_stylegan2.pth
+
+# Logs and errors
+alignment_errors.txt
+face_detection_errors.txt
+*.log
+
+# GenForce submodule build artifacts
+models/genforce/*.pyc
